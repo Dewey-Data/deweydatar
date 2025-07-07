@@ -301,7 +301,14 @@ get_file_list = function(apikey, product_path,
   }
 
   # To date type
+  # Account for if partition_key is in "YYYY-MM" format, append "-01" for new platform
+  files_df$partition_key = ifelse(
+    grepl("^\\d{4}-\\d{2}$", files_df$partition_key),
+    paste0(files_df$partition_key, "-01"),
+    files_df$partition_key
+  )
   files_df$partition_key = as.Date(files_df$partition_key)
+
   # Attach index
   files_df = data.frame(index = 1:nrow(files_df), files_df)
   # Backward compatibility

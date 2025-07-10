@@ -301,7 +301,7 @@ get_file_list = function(apikey, product_path,
   }
 
   # To date type
-  files_df$partition_key = as.Date(files_df$partition_key)
+  try({files_df$partition_key = as.Date(files_df$partition_key)})
   # Attach index
   files_df = data.frame(index = 1:nrow(files_df), files_df)
   # Backward compatibility

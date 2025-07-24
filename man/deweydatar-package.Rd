@@ -2,6 +2,7 @@
 % Please edit documentation in R/deweydatar_package.R
 \docType{package}
 \name{deweydatar-package}
+\alias{deweydatar}
 \alias{deweydatar-package}
 \title{deweydatar: An R package for Dewey Data Inc.}
 \description{
@@ -12,6 +13,13 @@ This is a beta version.
 }
 \references{
 None
+}
+\seealso{
+Useful links:
+\itemize{
+  \item Report bugs at \url{https://community.deweydata.io/c/help/r/44}
+}
+
 }
 \author{
 Dewey Data Inc.
